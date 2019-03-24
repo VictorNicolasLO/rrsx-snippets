@@ -1,0 +1,63 @@
+{
+  "createService": {
+    "prefix": "rssx",
+    "body": [
+      "//@flow",
+      "import { observable, action, computed } from 'mobx';",
+      "import { service, navigator, inject } from 'rrsx';",
+      "",
+      "export default",
+      "@service({})",
+      "class ${1:serviceName} {",
+      "// @inject(Service)",
+      "// serviceName:Service;",
+      "",
+      "  @observable",
+      "  name = '';",
+      "",
+      "  constructor() {}",
+      "",
+      "  @action",
+      "  functionName(params) {}",
+      "",
+      "  @computed",
+      "  get computedProp() {",
+      "   return ",
+      "",
+      "  }",
+      "}"
+    ]
+  },
+  "createComponent": {
+    "prefix": "rcsx",
+    "body": [
+      "//@flow",
+      "import React, { CSSProperties } from 'react';",
+      "import { component } from 'rrsx';",
+      "",
+      "type Props = { children: React.Component, style: CSSProperties };",
+      "",
+      "const ${1:componentName} = ({ style, children }: Props) => {",
+      "  return <div style={style}> component works {children} </div>;",
+      "};",
+      "",
+      "export default component<Props>(${1:componentName});"
+    ]
+  },
+
+  "createRoute": {
+    "prefix": "rrsx",
+    "body": [
+      "// @flow",
+      "import { createRouter } from 'rrsx';",
+      "export const Router = createRouter([",
+      " {",
+      "   path: '/',",
+      "   exact: true,",
+      "   guard: () => {},",
+      "   component: $1,",
+      "  },",
+      " ]"
+    ]
+  }
+}
