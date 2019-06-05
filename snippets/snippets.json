@@ -6,7 +6,6 @@
       "import { observable, action, computed } from 'mobx';",
       "import { service, navigator, inject } from 'rrsx';",
       "",
-      "export default",
       "@service({})",
       "class ${1:serviceName} {",
       "// @inject(Service)",
@@ -25,7 +24,8 @@
       "   return ",
       "",
       "  }",
-      "}"
+      "}",
+      "export default ${1:serviceName}"
     ]
   },
   "createComponent": {
